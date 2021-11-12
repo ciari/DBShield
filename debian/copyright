@@ -1,0 +1,121 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: dbshield
+Source: <url://example.com>
+#
+# Please double check copyright with the licensecheck(1) command.
+
+Files:     .dockerignore
+           .travis.yml
+           README.md
+           appveyor.yml
+           assets/css/login.css
+           assets/css/vis.min.css
+           assets/js/app.js
+           cert/ca-cert.pem
+           cert/server-cert.pem
+           cert/server-key.pem
+           conf/dbshield.yml
+           dbshield/config/config.go
+           dbshield/config/config_test.go
+           dbshield/dbms/db2.go
+           dbshield/dbms/db2_test.go
+           dbshield/dbms/io.go
+           dbshield/dbms/io_test.go
+           dbshield/dbms/mysql.go
+           dbshield/dbms/mysql_test.go
+           dbshield/dbms/oracle.go
+           dbshield/dbms/oracle_test.go
+           dbshield/dbms/postgres.go
+           dbshield/dbms/postgres_test.go
+           dbshield/dbms/utils.go
+           dbshield/dbms/utils_test.go
+           dbshield/dbshield.go
+           dbshield/dbshield_test.go
+           dbshield/httpserver/server.go
+           dbshield/httpserver/server_test.go
+           dbshield/logger/log.go
+           dbshield/logger/log_test.go
+           dbshield/sql/sql.go
+           dbshield/sql/sql_test.go
+           dbshield/training/training.go
+           dbshield/training/training_test.go
+           dbshield/utils.go
+           dbshield/utils/action.go
+           dbshield/utils/action_test.go
+           dbshield/utils/utils.go
+           dbshield/utils_test.go
+           main.go
+           main_test.go
+           misc/graph.png
+           misc/how_01.png
+           misc/how_02.png
+           misc/how_03.png
+           misc/no.png
+           misc/yes.png
+           test.sh
+Copyright: __NO_COPYRIGHT_NOR_LICENSE__
+License:   __NO_COPYRIGHT_NOR_LICENSE__
+
+Files:     Dockerfile
+Copyright: __NO_COPYRIGHT__ in: Dockerfile
+License:   __UNKNOWN__
+ ENV GOPATH /go
+ .
+ COPY . /go/src/github.com/nim4/DBShield
+ WORKDIR /go/src/github.com/nim4/DBShield
+ COPY conf/dbshield.yml /etc/dbshield.yml
+ .
+ RUN openssl genrsa -out cert/server-key.pem 2048
+
+Files:     assets/js/vis.min.js
+Copyright: 2011-2016 Almende B.V, http://almende.com
+License:   __UNKNOWN__ *** dual license ***
+ Vis.js is dual licensed under both
+ .
+ * The Apache 2.0 License
+ http://www.apache.org/licenses/LICENSE-2.0
+ .
+ and
+ .
+ * The MIT License
+ http://opensource.org/licenses/MIT
+ .
+ Vis.js may be distributed under either license.
+
+#----------------------------------------------------------------------------
+# xml and html files (skipped):
+#         assets/index.htm
+#         assets/report.htm
+#         misc/Diagrams.xml
+
+#----------------------------------------------------------------------------
+# huge files   (skipped):
+#         misc/demo.gif
+
+#----------------------------------------------------------------------------
+# Files marked as NO_LICENSE_TEXT_FOUND may be covered by the following
+# license/copyright files.
+
+#----------------------------------------------------------------------------
+# License file: LICENSE
+ MIT License
+ .
+ Copyright (c) 2016 Nima Ghotbi
+ .
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.

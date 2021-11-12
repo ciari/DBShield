@@ -1,0 +1,2 @@
+conf/dbshield.yml /etc/dbshield/
+debian/dbshield-tmp/bin/dbshield /usr/sbin/dbshield

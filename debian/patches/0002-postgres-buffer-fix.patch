@@ -1,0 +1,113 @@
+From: Ibrahim ARI <ibrahim.ari@pardus.org.tr>
+Date: Wed, 10 Nov 2021 21:32:35 +0300
+Subject: postgres buffer fix
+
+---
+ dbshield/dbms/postgres.go | 23 ++++++++++++-----------
+ 1 file changed, 12 insertions(+), 11 deletions(-)
+
+diff --git a/dbshield/dbms/postgres.go b/dbshield/dbms/postgres.go
+index c45e186..dd837f5 100644
+--- a/dbshield/dbms/postgres.go
++++ b/dbshield/dbms/postgres.go
+@@ -4,6 +4,7 @@ import (
+ 	"bytes"
+ 	"crypto/tls"
+ 	"encoding/binary"
++	"errors"
+ 	"io"
+ 	"net"
+ 	"strings"
+@@ -31,7 +32,7 @@ func (p *Postgres) SetCertificate(crt, key string) (err error) {
+ 
+ //SetReader function for sockets IO
+ func (p *Postgres) SetReader(f func(io.Reader) ([]byte, error)) {
+-	p.reader = f
++	ReadPacket = f
+ }
+ 
+ //SetSockets for dbms (client and server sockets)
+@@ -43,7 +44,7 @@ func (p *Postgres) SetSockets(c, s net.Conn) {
+ 
+ //Close sockets
+ func (p *Postgres) Close() {
+-	defer handlePanic()
++//	defer handlePanic()
+ 	p.client.Close()
+ 	p.server.Close()
+ }
+@@ -55,7 +56,7 @@ func (p *Postgres) DefaultPort() uint {
+ 
+ //Handler gets incoming requests
+ func (p *Postgres) Handler() (err error) {
+-	defer handlePanic()
++//	defer handlePanic()
+ 	defer p.Close()
+ 
+ 	success, err := p.handleLogin()
+@@ -69,7 +70,7 @@ func (p *Postgres) Handler() (err error) {
+ 	for {
+ 		var buf []byte
+ 		//Read client request
+-		buf, err = p.reader(p.client)
++		buf, err = ReadPacket(p.client)
+ 		if err != nil {
+ 			return
+ 		}
+@@ -95,7 +96,7 @@ func (p *Postgres) Handler() (err error) {
+ 			return
+ 		}
+ 
+-		err = readWrite(p.server, p.client, p.reader)
++		err = readWrite(p.server, p.client, ReadPacket)
+ 		if err != nil {
+ 			return
+ 		}
+@@ -104,13 +105,13 @@ func (p *Postgres) Handler() (err error) {
+ 
+ func (p *Postgres) handleLogin() (success bool, err error) {
+ 	//Receive Greeting
+-	err = readWrite(p.client, p.server, p.reader)
++	err = readWrite(p.client, p.server, ReadPacket)
+ 	if err != nil {
+ 		return
+ 	}
+ 
+ 	//Receive Greeting
+-	buf, err := p.reader(p.server)
++	buf, err := ReadPacket(p.server)
+ 	if err != nil {
+ 		return
+ 	}
+@@ -127,7 +128,7 @@ func (p *Postgres) handleLogin() (success bool, err error) {
+ 	}
+ 
+ 	//Receive username and database name
+-	buf, err = p.reader(p.client)
++	buf, err = ReadPacket(p.client)
+ 	if err != nil {
+ 		return
+ 	}
+@@ -165,19 +166,19 @@ func (p *Postgres) handleLogin() (success bool, err error) {
+ 	}
+ 
+ 	//Read authentication request from server
+-	err = readWrite(p.server, p.client, p.reader)
++	err = readWrite(p.server, p.client, ReadPacket)
+ 	if err != nil {
+ 		return
+ 	}
+ 
+ 	//Read client password message
+-	err = readWrite(p.client, p.server, p.reader)
++	err = readWrite(p.client, p.server, )
+ 	if err != nil {
+ 		return
+ 	}
+ 
+ 	//Read authtentication result from server
+-	buf, err = p.reader(p.server)
++	buf, err = ReadPacket(p.server)
+ 	if err != nil {
+ 		return
+ 	}

@@ -1,0 +1,10 @@
+[Unit]
+Description=Ahtapot Database Firewall
+Requires=network.target
+
+[Service]
+ExecStart=/usr/sbin/dbshield/dbshield -c /etc/dbshield/dbshield.yml
+
+[Install]
+WantedBy=multi-user.target
+

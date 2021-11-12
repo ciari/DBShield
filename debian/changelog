@@ -1,0 +1,69 @@
+dbshield (1.0.0-1pardus11) testing; urgency=medium
+
+  * fix git repo path
+
+ -- Ibrahim ARI <ibrahim.ari@pardus.org.tr>  Thu, 11 Nov 2021 12:04:40 +0300
+
+dbshield (1.0.0-1pardus10) testing; urgency=medium
+
+  * postgres buffer fix
+
+ -- Ibrahim ARI <ibrahim.ari@pardus.org.tr>  Wed, 10 Nov 2021 21:33:28 +0300
+
+dbshield (1.0.0-1pardus9) testing; urgency=medium
+
+  * fixed go dependency hashicorp
+
+ -- Ibrahim ARI <ibrahim.ari@pardus.org.tr>  Wed, 10 Nov 2021 20:44:17 +0300
+
+dbshield (1.0.0-1pardus8) testing; urgency=medium
+
+  * Update changelog for 1.0.0-1pardus7 release
+  * mysql buffer patches applied
+
+ -- Ibrahim ARI <ibrahim.ari@pardus.org.tr>  Wed, 10 Nov 2021 20:41:07 +0300
+
+dbshield (1.0.0-1pardus7) testing; urgency=medium
+
+  * Update changelog for 1.0.0-1pardus6 release
+  * drone updated
+
+
+ -- Ibrahim ARI <ibrahim.ari@pardus.org.tr>  Fri, 02 Aug 2019 19:34:21 +0300
+
+dbshield (1.0.0-1pardus6) testing; urgency=medium
+
+  * added drone.yml for pardus CI
+
+
+ -- Ibrahim ARI <ibrahim.ari@pardus.org.tr>  Fri, 02 Aug 2019 19:33:04 +0300
+
+dbshield (1.0.0-1pardus5) testing; urgency=medium
+
+  * added systemd files
+
+ -- Ibrahim ARI <ibrahim.ari@pardus.org.tr>  Mon, 01 Jul 2019 13:23:50 +0300
+
+dbshield (1.0.0-1pardus4) testing; urgency=medium
+
+  * fixed services paths
+
+ -- Ibrahim ARI <ibrahim.ari@pardus.org.tr>  Mon, 01 Jul 2019 13:09:17 +0300
+
+dbshield (1.0.0-1pardus3) testing; urgency=medium
+
+  * fixed binary path
+
+ -- Ibrahim ARI <ibrahim.ari@pardus.org.tr>  Mon, 01 Jul 2019 12:39:53 +0300
+
+dbshield (1.0.0-1pardus2) testing; urgency=medium
+
+  * ahtapot.sh udpated
+
+ -- Ibrahim ARI <ibrahim.ari@pardus.org.tr>  Mon, 01 Jul 2019 12:23:07 +0300
+
+dbshield (1.0.0-1pardus1) testing; urgency=medium
+
+  * Initial release for pardus
+
+ -- Ibrahim ARI <ibrahim.ari@pardus.org.tr>  Mon, 01 Jul 2019 12:17:02 +0300

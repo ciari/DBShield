@@ -1,0 +1,17 @@
+Source: dbshield
+Section: database
+Priority: extra
+Maintainer: Ibrahim ARI <ibrahim.ari@pardus.org.tr>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.8
+Homepage: http://www.ahtapot.org.tr/packages/dbshield
+
+Package: dbshield
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: multi db firewall for pardus ahtapot
+ Protects your data by inspecting incoming queries 
+ from your application server and rejecting abnormal ones.
+
+
