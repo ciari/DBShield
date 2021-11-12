@@ -1,7 +1,7 @@
 #!/bin/bash
 pkgname=dbshield
 orig_name=DBShield
-git_user=nim4
+git_user=ciari
 
 app_dir=/usr/src/app/
 env_path=$app_dir/venv
