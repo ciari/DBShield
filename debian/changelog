@@ -1,3 +1,9 @@
+dbshield (1.0.0-1pardus12) testing; urgency=medium
+
+  * merged patches
+
+ -- Ibrahim ARI <ibrahim.ari@pardus.org.tr>  Fri, 12 Nov 2021 22:48:44 +0300
+
 dbshield (1.0.0-1pardus11) testing; urgency=medium
 
   * fix git repo path
