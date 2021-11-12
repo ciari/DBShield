@@ -1,3 +1,9 @@
+dbshield (1.0.0-1pardus13) testing; urgency=medium
+
+  * update ahtapot.sh
+
+ -- Ibrahim ARI <ibrahim.ari@pardus.org.tr>  Fri, 12 Nov 2021 22:53:15 +0300
+
 dbshield (1.0.0-1pardus12) testing; urgency=medium
 
   * merged patches
